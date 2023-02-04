@@ -1,0 +1,31 @@
+ pipeline {
+    agent any
+
+    stages {
+        stage("pralleljob"){
+            parallel{
+                stage('Test') {
+                    steps {
+                        echo "Hello from ${env.JOB_NAME}:${env.BUILD_ID}"
+                    }
+                
+                }
+                stage('Build') {
+                    steps {
+                        echo "Hello from ${env.JOB_NAME}:${env.BUILD_ID}"
+                    }
+                    
+                }
+                stage('Deploy') {
+                    steps {
+                        echo "Hello from ${env.JOB_NAME}:${env.BUILD_ID}"
+                    }
+                
+                }
+            }
+        }
+        
+        
+        
+    }
+}
